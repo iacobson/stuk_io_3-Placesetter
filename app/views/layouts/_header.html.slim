@@ -19,9 +19,10 @@ nav.navbar.navbar-default
         button.btn.btn-default[type="submit"]
           | Submit
       ul.nav.navbar-nav.navbar-right
-        li
-          a[href="#"]
-            | Login
-        li
-          a[href="#"]
-            | Signup
+        - if current_user
+          li = link_to "Settings", edit_user_registration_path
+          li = link_to "Logout", destroy_user_session_path, method: :delete
+
+        - else
+          li = link_to "Login", new_user_session_path
+          li = link_to "Signup", new_user_registration_path
