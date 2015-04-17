@@ -1,0 +1,11 @@
+.row
+  .col-md-1
+    = gravatar_tag review.user.email, size: 50   
+  .col-md-11  
+    = review.content
+    br
+    small
+      | by 
+      = review.user.name
+
+hr

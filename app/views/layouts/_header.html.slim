@@ -10,9 +10,7 @@ nav.navbar.navbar-default
       = link_to "Placesetter", root_path, class: "navbar-brand"
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li
-          a[href="#"]
-            | Places
+        li = link_to "Places", places_path
       form.navbar-form.navbar-left[role="search"]
         .form-group
           input.form-control[type="text" placeholder="Search"]

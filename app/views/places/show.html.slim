@@ -1,0 +1,22 @@
+
+.row
+  .col-md-3
+    h3 = @place.name
+    strong Address
+    p = @place.address
+    strong Phone
+    p = @place.phone
+    strong Website
+    p = @place.website
+    strong Description
+    p = @place.description
+    // pass the info to javascript with 'data'
+    #map-canvas data-lat = @place.latitude data-lng = @place.longitude
+  
+  .col-md-9
+    h3 REVIEWS
+    - if current_user
+      h5 New Review
+      = render 'reviews/form'
+      br
+      = render @reviews
